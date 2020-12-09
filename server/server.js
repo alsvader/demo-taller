@@ -1,4 +1,6 @@
 const express = require('express');
+const session = require('express-session');
+const flash = require('connect-flash');
 const inicioRutas = require('../rutas/inicio');
 const adminRutas = require('../rutas/administracion');
 const articulosRutas = require('../rutas/articulos');
@@ -9,6 +11,14 @@ app.set('views', './vistas');
 app.set('view engine', 'pug');
 
 app.use(express.urlencoded({ extended: true }));
+app.use(
+  session({
+    secret: 'millavesecreta',
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+app.use(flash());
 
 app.use('/usuarios', inicioRutas);
 app.use('/administracion', adminRutas);
