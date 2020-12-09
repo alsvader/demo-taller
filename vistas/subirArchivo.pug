@@ -1,0 +1,6 @@
+extends principal.pug
+
+block contenido
+  form(action="/articulos/formularioarchivo", method="post", enctype="multipart/form-data")
+    input(type="file", name="archivo")
+    input(type="submit", value="Enviar archivo")

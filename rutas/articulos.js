@@ -1,6 +1,11 @@
 const express = require('express');
 const joi = require('joi');
+const multer = require('multer');
 const router = express.Router();
+
+const upload = multer({
+  dest: '../publica',
+}).single('archivo');
 
 router.get('/agregar', (req, res) => {
   const errores = req.flash('errores');
@@ -32,6 +37,15 @@ router.post('/agregar', (req, res) => {
   }
 
   res.redirect('/articulos/agregar');
+});
+
+router.get('/formularioarchivo', (req, res) => {
+  res.render('subirArchivo', { titulo: 'Subir archivo' });
+});
+
+router.post('/formularioarchivo', upload, (req, res) => {
+  console.log(req.file);
+  res.send('procesando');
 });
 
 module.exports = router;
