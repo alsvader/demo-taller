@@ -1,0 +1,10 @@
+extends principal.pug
+
+block contenido
+  each articulo in articulos
+    h1=articulo.titulo
+    h2=articulo.descripcion
+    p=articulo.contenido
+    a(href="/articulos/editar/" + articulo.id) Editar
+    form(action="/articulos/eliminar/" + articulo.id, method="post")
+      input(type="submit", value="Eliminar")

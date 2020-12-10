@@ -5,6 +5,13 @@ block contenido
   if errores.length > 0
     each error in errores
       p=error
+  
+  if correcto
+    p=correcto
+
+  if errorBD
+    p=errorBD
+
   form(action="/articulos/agregar", method="post")
     label(for="titulo") Titulo:
     input(type="text", name="titulo")

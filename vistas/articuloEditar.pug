@@ -1,0 +1,23 @@
+extends principal.pug
+
+block contenido
+  h2 Editar artículo
+
+  form(action=("/articulos/editar/" + articulo.id), method="post")
+    label(for="titulo") Titulo:
+    input(
+      type="text",
+      name="titulo",
+      value=(articulo.titulo ? articulo.titulo : '')
+    )
+    label(for="descripcion") Descripcion
+    input(
+      type="text",
+      name="descripcion",
+      value=(articulo.descripcion ? articulo.descripcion : '')
+      required
+    )
+    textarea( name="contenido")
+      if articulo.contenido
+        | #{articulo.contenido}
+    input(type="submit", value="Guardar")
