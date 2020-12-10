@@ -1,10 +1,24 @@
 const express = require('express');
 const joi = require('joi');
 const multer = require('multer');
+const { v1: uuidV1 } = require('uuid');
+const path = require('path');
 const router = express.Router();
 
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const dirname = path.join(__dirname, '../publica');
+    cb(null, dirname);
+  },
+  filename: (req, file, cb) => {
+    const extension = path.extname(file.originalname);
+    const filename = uuidV1() + extension;
+    cb(null, filename);
+  },
+});
+
 const upload = multer({
-  dest: '../publica',
+  storage: storage,
 }).single('archivo');
 
 router.get('/agregar', (req, res) => {
