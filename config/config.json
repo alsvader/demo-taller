@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "h1qtd44gnzg2a36f",
-    "password": "z7ur27o0nzlpmtw6",
-    "database": "liktvy2grtm4wrfn",
-    "host": "klbcedmmqp7w17ik.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": null,
+    "database": "cursonode",
+    "host": "127.0.0.1",
     "dialect": "mariadb"
   },
   "test": {
@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "h1qtd44gnzg2a36f",
-    "password": "z7ur27o0nzlpmtw6",
-    "database": "liktvy2grtm4wrfn",
-    "host": "klbcedmmqp7w17ik.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": null,
+    "database": "cursonode",
+    "host": "127.0.0.1",
     "dialect": "mariadb"
   }
 }
