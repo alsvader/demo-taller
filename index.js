@@ -7,4 +7,6 @@
 
 const app = require('./server/server');
 
-app.listen(3000, () => console.log('Servidor iniciado'));
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => console.log('Servidor iniciado'));
