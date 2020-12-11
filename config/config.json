@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "cursonode",
-    "host": "127.0.0.1",
+    "username": "xkhaj86rl07pban3",
+    "password": "xja6ws0xwqutup4d",
+    "database": "dbwezk2jd91q2sc8",
+    "host": "klbcedmmqp7w17ik.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mariadb"
   }
 }
