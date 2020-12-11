@@ -27,6 +27,10 @@ app.use('/usuarios', inicioRutas);
 app.use('/administracion', adminRutas);
 app.use('/articulos', articulosRutas);
 
+app.get('/', (req, res) => {
+  res.send('Hola mundo');
+});
+
 app.get('/conocenos', (req, res) => {
   res.send('somos una empresa de software');
 });
